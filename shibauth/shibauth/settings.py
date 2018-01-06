@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
+#TEMPLATE_DIRS= (os.path.join(PROJECT_DIR, 'templates'),)
 
 # Application definition
 
@@ -54,11 +56,11 @@ ROOT_URLCONF = 'shibauth.urls'
 
 # Add static folder to STATIC_DIRS
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
-
+#templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],
+        'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
